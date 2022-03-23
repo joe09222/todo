@@ -6,12 +6,13 @@ const input_field = document.getElementById("task-info")
 
 
 
-
 input_form.addEventListener("submit", (e)=>{
     e.preventDefault();
     add_task( input_field.value  );
     input_field.value = "";
 })
+
+
 
 
 
@@ -57,13 +58,12 @@ function add_task( task_desc ){
     new_task.appendChild(button_div)
 
     id++;
-    data.push(task_desc); 
 }
 
 function delete_todo( task_id ){
     const all_tasks = task_container.getElementsByClassName("single-task");
 
-    for( let i = 0; i < all_tasks.length ;i++){
+    for( let i = 0; i < all_tasks.length ;i){
         const task = all_tasks[i];
         if( all_tasks[i].id  === String(task_id) ){
             task.remove();
@@ -98,7 +98,6 @@ function add_sub_todo( task_id, task_desc ){
         }
     }
 }
-
 
 
 
